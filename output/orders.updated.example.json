@@ -1,0 +1,34 @@
+[
+  {
+    "order_id": "1001",
+    "customer": "Alice Smith",
+    "city": "New York",
+    "status": "Delayed",
+    "weather": {"main": "Rain", "description": "heavy rain", "temperatureC": 18, "feelsLikeC": 17, "humidity": 80},
+    "delay_reason": "rain (heavy rain)",
+    "customer_message": "Hi Alice, your order to New York is delayed due to rain (heavy rain). We appreciate your patience!"
+  },
+  {
+    "order_id": "1002",
+    "customer": "Bob Jones",
+    "city": "Mumbai",
+    "status": "Pending",
+    "weather": {"main": "Clouds", "description": "broken clouds", "temperatureC": 29, "feelsLikeC": 33, "humidity": 75}
+  },
+  {
+    "order_id": "1003",
+    "customer": "Charlie Green",
+    "city": "London",
+    "status": "Delayed",
+    "weather": {"main": "Snow", "description": "light snow", "temperatureC": 0, "feelsLikeC": -2, "humidity": 90},
+    "delay_reason": "snow (light snow)",
+    "customer_message": "Hi Charlie, your order to London is delayed due to snow (light snow). We appreciate your patience!"
+  },
+  {
+    "order_id": "1004",
+    "customer": "InvalidCity123",
+    "city": "InvalidCity123",
+    "status": "Pending",
+    "error": {"message": "OpenWeatherMap rejected \"InvalidCity123\": city not found.", "code": 404, "status_code": 404}
+  }
+]
