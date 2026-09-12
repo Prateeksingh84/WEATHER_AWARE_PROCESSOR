@@ -1,0 +1,1 @@
+{"timestamp":"2026-09-11T00:00:00.000Z","order_id":"1004","city":"InvalidCity123","error":"OpenWeatherMap rejected \"InvalidCity123\": city not found.","code":404,"status_code":404}
