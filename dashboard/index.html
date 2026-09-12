@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Order Operations Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">YELLOW.AI · ASSIGNMENT 2</p>
+      <h1>Weather Order Operations</h1>
+      <p class="sub">Real-time visibility into concurrent weather checks, delivery delays, customer messaging, and resilient error handling.</p>
+    </div>
+    <button id="runBtn" class="primary">Run Weather Check</button>
+  </header>
+
+  <main>
+    <section class="banner" id="statusBanner"><span class="dot"></span><span id="statusText">Ready</span></section>
+
+    <section class="kpis">
+      <article class="card kpi"><span>Total Orders</span><strong id="total">—</strong></article>
+      <article class="card kpi"><span>Delayed</span><strong id="delayed">—</strong></article>
+      <article class="card kpi"><span>Normal</span><strong id="normal">—</strong></article>
+      <article class="card kpi"><span>Errors</span><strong id="errors">—</strong></article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="card-head"><h2>Run Health</h2><span id="lastRunBadge" class="badge">No run yet</span></div>
+        <div class="health-grid">
+          <div><span>Started</span><strong id="runStarted">—</strong></div>
+          <div><span>Finished</span><strong id="runFinished">—</strong></div>
+          <div><span>Exit Code</span><strong id="runCode">—</strong></div>
+          <div><span>Result</span><strong id="runResult">—</strong></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><h2>Processing Model</h2><span class="badge neutral">Promise.allSettled</span></div>
+        <div class="flow">
+          <div>4 orders loaded</div><div>→</div><div>Concurrent weather requests</div><div>→</div><div>Delay rule</div><div>→</div><div>Updated JSON + logs</div>
+        </div>
+        <p class="hint">The Run Now button launches the same live processor used by <code>npm start</code>.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h2>Orders</h2><span id="refreshStamp" class="muted">Waiting for data</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Order</th><th>Customer</th><th>City</th><th>Weather</th><th>Status</th><th>Customer Message</th></tr></thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="card-head"><h2>Error Log</h2><span class="badge danger" id="errorCount">0</span></div>
+        <div id="errorList" class="log"></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><h2>Live Console</h2><span class="badge neutral" id="liveBadge">Idle</span></div>
+        <div id="console" class="console"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>Local dashboard · data comes from <code>orders.updated.json</code> and <code>errors.log</code> · API key remains server-side in <code>.env</code>.</footer>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
